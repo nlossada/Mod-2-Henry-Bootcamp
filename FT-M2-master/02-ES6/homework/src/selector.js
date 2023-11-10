@@ -83,15 +83,6 @@ var matchFunctionMaker = function (selector) {
 };
 
 
-
-
-
-
-
-
-
-
-
 var $ = function (selector) {
   var elements;
   var selectorMatchFunc = matchFunctionMaker(selector);
