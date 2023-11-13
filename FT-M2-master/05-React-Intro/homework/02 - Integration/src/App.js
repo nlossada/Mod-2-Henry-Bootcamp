@@ -12,16 +12,19 @@ function App() {
       </div>
    );
 }
-/* elimine objeto de card de Rick porque no me andaba el map de card si no
-  <Card
-            id={Rick.id}
-            name={Rick.name}
-            status={Rick.status}
-            species={Rick.species}
-            gender={Rick.gender}
-            origin={Rick.origin.name}
-            image={Rick.image}
-            onClose={() => window.alert('Emulamos que se cierra la card')}
-         />
-*/
+
 export default App;
+//elimine objeto de card de Rick para evitar duplicación del map de card
+// <Card
+//    id={Rick.id}
+//    name={Rick.name}
+//    status={Rick.status}
+//    species={Rick.species}
+//    gender={Rick.gender}
+//    origin={Rick.origin.name}
+//    image={Rick.image}
+//    onClose={() => window.alert('Emulamos que se cierra la card')}
+// />
+
+// si exportas por default character, puedo traerlo sin nombre o con el nombre que quiera
+// el export común, con nombre en un objeto, lo tengo que destructuring

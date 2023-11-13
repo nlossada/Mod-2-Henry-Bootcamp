@@ -1,13 +1,12 @@
 body {
-  background: #f0f0f0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
-  color: #333;
-  /* background-color: #01161e; */
+  color: rgb(165, 154, 154);
+  background-color: #01161e;
   width: 100vw;
   height: 100vh;
   z-index: 1;
