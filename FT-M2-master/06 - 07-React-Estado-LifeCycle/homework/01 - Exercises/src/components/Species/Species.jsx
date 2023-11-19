@@ -3,7 +3,7 @@ import styledSpecies from "./Species.module.css";
 
 export default function Species({ species, handleSpecies, handleAllSpecies }) {
   // console.log(species);
-  return <div className="divContent">
+  return <div>
     <h2>Species</h2>
     {
       species.map((specie, index) => {

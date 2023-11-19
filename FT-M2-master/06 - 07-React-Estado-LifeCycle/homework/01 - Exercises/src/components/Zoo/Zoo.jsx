@@ -34,9 +34,9 @@ export default function Zoo() {
   }, []);
 
   function handleSpecies(event) {
-    setZoo({ ...zoo, allAnimals: zoo.animals })
-    console.log(zoo.animals)
-    console.log(event.target.value)
+    // console.log(zoo.animals)
+    // console.log(event.target.value)
+    // se puede hacer const {value} = event.target y luego uso solo el value
     const filtSpecie = zoo.allAnimals.filter((animalFilter) => event.target.value === animalFilter.specie)
     console.log(filtSpecie)
     setZoo({ ...zoo, animals: filtSpecie })
@@ -48,9 +48,12 @@ export default function Zoo() {
 
   return (
     <div>
-      <label htmlFor="zooInput">Zoo Name:</label>
-      <input type="text" name="" id="zooInput" value={zoo.zooName} onChange={handleInputChange} />
-      <h1>{zoo.zooName}</h1>
+      <div >
+        <label>Zoo Name:</label>
+        <input type="text" value={zoo.zooName} onChange={handleInputChange} />
+        <h1>{zoo.zooName}</h1>
+      </div>
+
 
       <Species species={zoo.species} handleSpecies={handleSpecies} handleAllSpecies={handleAllSpecies} />
       <Animals animals={zoo.animals} />
