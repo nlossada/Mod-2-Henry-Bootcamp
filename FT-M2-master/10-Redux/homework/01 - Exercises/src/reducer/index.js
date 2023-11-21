@@ -10,18 +10,16 @@ const initialState = {
 
 function contador(state = initialState, action) {  // action = {type:"", payload:}
   switch (action.type) {
-    case INCREMENTO: {
+    case INCREMENTO:
       return {
         ...state,
         contador: state.contador + 1
       }
-    }
-    case DECREMENTO: {
+    case DECREMENTO:
       return {
         ...state,
         contador: state.contador - 1
       }
-    }
     default:
       return { ...state }
   }

@@ -1,7 +1,8 @@
 const redux = require("redux");
 const contador = require("./reducer");
 const { incremento, decremento } = require("./actions");
-const reducer = require("./reducer/index")
+const reducer = require("./reducer/index");
+const { DECREMENTO } = require("./action-types");
 
 // En esta línea creamos nuestro store. Pasándole como parámetro nuestro Reducer
 var store = redux.createStore(contador);
@@ -16,10 +17,10 @@ function renderContador() {
   // Obtenemos la propiedad 'contador' de nuestro store:
   // Seteamos el número obtenido como texto dentro del elemento con id 'valor':
 
-  const cont = store.getState().contador
+  const currentState = store.getState().contador
   const p = document.createElement("p")
-  p.innerHTML = cont;
-  valor.appendChild(p)
+  valor.innerHTML = currentState;
+
 }
 
 // Ejecutamos la función 'renderContador':
@@ -37,6 +38,27 @@ const btnDecremento = document.querySelector("#decremento")
 const btnIncreImpar = document.querySelector("#incrementoImpar")
 const btnIncreAsync = document.querySelector("#incrementoAsync")
 
-btnIncremento("click", store.dispatch)
-btnDecremento("click", store.dispatch)
+btnIncremento.addEventListener("click", () => {
+  store.dispatch(incremento()) //tmb puedo enviar {type:"decremento"}
+})
+btnDecremento.addEventListener("click", () => {
+  store.dispatch(decremento())  //ejecuto la función para enviar el objeto, ver func
+})
+
+//pasar funcion pura, a mismo input, mismo output, por eso tengo que hacer OTRA funcion nueva
+btnIncreImpar.addEventListener("click", () => {
+  const currentState = store.getState().contador
+  // solo si es impar ejecutar
+  if (currentState % 2 === 1) store.dispatch(incremento())
+})
+
+// que espere y luego sume... funcion PURA, definir nuevamente
+const incrementoAsync = () => {
+  setTimeout(() => {
+    store.dispatch(incremento())
+  }, 2000)
+}
+btnIncreAsync.addEventListener("click", () => {
+  incrementoAsync() //tmb puedo enviar {type:"decremento"}
+})
 

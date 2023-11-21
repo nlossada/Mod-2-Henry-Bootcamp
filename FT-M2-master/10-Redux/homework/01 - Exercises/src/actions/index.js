@@ -8,14 +8,14 @@ const { INCREMENTO, DECREMENTO } = require('../action-types');
 const incremento = () => {
   return {
     type: INCREMENTO,
-    payload: "",
+    //payload: null,
   }
 }
 
 const decremento = () => {
   return {
     type: INCREMENTO,
-    payload: "",
+    //payload: null,
   }
 }
 
